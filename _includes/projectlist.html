@@ -1,0 +1,16 @@
+
+  <h1 class="page-heading">Projects</h1>
+
+  <ul class="project-list">
+    {% for post in site.pages %}
+      {% for cat in post.categories %}
+        {% if post.title and cat == "project" %}
+      <li>
+        <h2>
+          <a class="project-link" href="{{ post.url | replace: 'index.html', '' | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+        {% endif %}
+      {% endfor %}    
+    {% endfor %}
+  </ul>

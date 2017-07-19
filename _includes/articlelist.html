@@ -1,0 +1,27 @@
+{% assign c = 0 %}
+{% for pg in site.pages %}
+  {% if pg.project == page.project %}
+	{% if pg.categories contains 'article' %}
+	  {% assign c = c | plus:1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if c > 0 %}
+  <h1 class="page-heading">Articles</h1>
+  <ul class="project-list">
+  {% for pg in site.pages %}
+	{% if pg.project == page.project %}
+		{% for pcat2 in pg.categories %}
+		  {% if pcat2 == "article" %}
+  <li>
+    <h3>
+      <a class="project-link" href="{{ pg.url | replace: 'index.html', '' | prepend: site.baseurl }}">{{ pg.title }}</a>
+    </h3>
+  </li> 
+		  {% endif %}
+		{% endfor %}
+	  {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
