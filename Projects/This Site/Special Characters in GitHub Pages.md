@@ -9,7 +9,7 @@ I found a few things challenging while working with [GitHub Pages], particularly
 
 ## Superscript and Subscript
 
-The html tags `<sup>` and `<sub>` do not appear to work wtih Markdown... specifically with GitHub Pages. After some experimentation I found that I can create a span with a specific class and use css to format that span as superscript or subscript.
+The html tags `<sup>` and `<sub>` do not appear to work with Markdown... specifically with GitHub Pages. After some experimentation, I found that I can create a span with a specific class and use css to format that span as superscript or subscript.
 
 Here is how I implemented it: `E = MC<span class="sup">2</span>`, and here is what it looks like: E = MC<span class="sup">2</span>. The css is very straight forward.
 
@@ -25,6 +25,6 @@ Here is how I implemented it: `E = MC<span class="sup">2</span>`, and here is wh
 
 ## Showing a colon (:) in the title
 
-Another issue that I had is that within the header section a colon is a special character. The qucik and easy fix for this is to use the encoded html tag `&#58;`.
+Another issue that I had is that within the header section a colon is a special character. The quick and easy fix for this is to use the encoded html tag `&#58;`.
 
 [GitHub Pages]: https://pages.github.com/

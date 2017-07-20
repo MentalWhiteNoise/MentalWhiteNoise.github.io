@@ -30,40 +30,50 @@
 	vertical-align: sub;
 }
 
-#footer_wrap .inner div {  
-  display: table;
-  width: -webkit-calc(50%);
-  width: calc(50%);
-  float: left;
-  height: 50px;
+/* URLs that are too long mess with mobile. This is a quick fix */
+.project-content {
+    overflow: hidden;
 }
- 
+
+/* Lock the footer to keep a minimum width on mobile devices, and keep the footer looking good. */
+#footer_wrap .inner {
+    min-width: 375px;
+}
+
+#footer_wrap .inner div {  
+    display: table;
+    width: -webkit-calc(50%);
+    width: calc(50%);
+    float: left;
+    height: 50px;
+}
+
 #footer_wrap span {
-  display: table-cell;
-  vertical-align: middle; 
+	display: table-cell;
+	vertical-align: middle; 
 }
 
 #footer_wrap a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 #footer_wrap a:hover { 
-  text-decoration: underline;
-  font-weight: normal;
+	text-decoration: underline;
+	font-weight: normal;
 }
 
 #footer_wrap img {
-  vertical-align: middle;
-  border: none;
-  box-shadow: none;
+	vertical-align: middle;
+	border: none;
+	box-shadow: none;
 }
 
 #footer-left {
-  text-align: left;
-  vertical-align: middle;
+	text-align: left;
+	vertical-align: middle;
 }
 
 #footer-right {
-  text-align: right;
-  vertical-align: middle;
+	text-align: right;
+	vertical-align: middle;
 }

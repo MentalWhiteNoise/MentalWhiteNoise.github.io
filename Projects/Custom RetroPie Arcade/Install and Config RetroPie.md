@@ -19,7 +19,7 @@ project: retropie
 
    I created a "RetroPie" folder on a thumb drive. Then I inserted the thumb drive into the running Raspberry Pi with RetroPie installed. RetroPie automatically copies over certain "transfer" and configuration directories to the thumb drive. The LED on the Raspberry Pi blinks to show activity, so I waited until the LED was no longer blinking before removing the thumb drive.
    
-   I then copied all of the ROMs I had (I was able to find and download ROMs for all of the games I had on the old systems!) into the "home/pi/RetroPie/roms" folder. 
+   I then copied all the ROMs I had (I was able to find and download ROMs for all the games I had on the old systems!) into the "home/pi/RetroPie/roms" folder. 
    
       Here were the folders I copied the ROMs to:
       * atari2600
@@ -28,13 +28,13 @@ project: retropie
       * psx (Playstation One)
       * snes  
       
-   After the copy finished, I ejected the thumb drive, brought it over to the RPI, and waited for the blinking to stop. Because I had a lot of ROMs, and my thumb drive was no where near as large as the SD card, I had to repeat this proces several times.
+   After the copy finished, I ejected the thumb drive, brought it over to the RPI, and waited for the blinking to stop. Because I had a lot of ROMs, and my thumb drive was nowhere near as large as the SD card, I had to repeat this process several times.
 
 3. Clean up the list of systems
 
    I then edited the EmulationStation systems config file (etc/emulationstation/es_systems.cfg) and commented out all systems that I did not want. I found this easier than worrying about where there was and was not folders. 
    
-   For the PlayStation (psx) games, some had multiple files. I needed to comment out all of the unwanted extensions, leaving only the .CUE files. This only works if you disable the folder search for the system (<https://github.com/Aloshi/EmulationStation/issues/314>)
+   For the PlayStation (psx) games, some had multiple files. I needed to comment out all the unwanted extensions, leaving only the .CUE files. This only works if you disable the folder search for the system (<https://github.com/Aloshi/EmulationStation/issues/314>)
    
    Because I had such a long list of ROMs (particularly for the Atari), I categorized them into genre specific folders. That has made it easier to search through the lists. It also adds to the arcade by letting players find games similar to ones they remember.  
 
@@ -44,7 +44,7 @@ project: retropie
    
    Then I went through and found images showing the buttons of the various controllers for the consoles I am emulating. I tried a couple of games on a specific emulator, then made note of what I needed to change, both for the first and second person.
    
-   Looking through documentation as well as modified dates on various files I was able to track down which files were being updated, and going through the RetroArch config I was able to figure out which buttons were mapped to which keys, and therefore which keys I wanted mapped to which commands for each of the emulators. I ended up manually modifying the config files to get it right, and I believe I still have some issues with some of the mappins (particularly in Sega Genesis). 
+   Looking through documentation as well as modified dates on various files I was able to track down which files were being updated, and going through the RetroArch config I was able to figure out which buttons were mapped to which keys, and therefore which keys I wanted mapped to which commands for each of the emulators. I ended up manually modifying the config files to get it right, and I believe I still have some issues with some of the mappings (particularly in Sega Genesis). 
    
    Here is a list of the files that I ended up modifying:
    
@@ -59,7 +59,7 @@ project: retropie
 
 5. Configure / pull rom metadata & images
 
-   I wanted my arcade to look cool, so I scraped for images and metadata about the ROMs. For the games I coudn't find, I searched online and pulled images and data manually. This has given my system a cool feel.
+   I wanted my arcade to look cool, so I scraped for images and metadata about the ROMs. For the games I couldn't find, I searched online and pulled images and data manually. This has given my system a cool feel.
 
 6. Update RetroPie - <https://github.com/retropie/retropie-setup/wiki/updating-retropie>
 

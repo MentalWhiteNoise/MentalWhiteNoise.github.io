@@ -1,6 +1,6 @@
 ---
 layout: project
-title: This Site&#58; Organizing My Project Nots
+title: This Site&#58; Organizing My Project Notes
 categories: [project, github, jekyll, github_pages]
 project: this_site
 ---
@@ -192,6 +192,16 @@ Next, I decided to start updating this template to allow the "every page" functi
   
   {% raw %}
   ```css
+  /* URLs that are too long mess with mobile. This is a quick fix */
+  .project-content {
+    overflow: hidden;
+  }
+
+  /* Lock the footer to keep a minimum width on mobile devices, and keep the footer looking good. */
+  #footer_wrap .inner {
+    min-width: 375px;
+  }
+
   #footer_wrap .inner div {  
     display: table;
     width: -webkit-calc(50%);
