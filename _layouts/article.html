@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+  {% for pg in site.pages %}
+	{% if pg.project == page.project %}
+	  {% for pcat2 in pg.categories %}
+		{% if pcat2 == "project" %}
+		  <I>This is an article from the project "<a class="project-link" href="{{ pg.url | replace: 'index.html', '' | prepend: site.baseurl }}">{{ pg.title }}</a>"</I>
+		{% endif %}
+	  {% endfor %}
+	{% endif %}
+  {% endfor %}
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>

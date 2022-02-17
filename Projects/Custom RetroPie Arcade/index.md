@@ -36,7 +36,78 @@ If you are a programmer, you probably already know all about the awesomeness of 
 
 [Check out how I was able to rebuild the EmulationStation with my changes](Articles/Rebuild EmulationStation)
 
+## Adding "Multiple System" Folders
+
+* <https://retropie.org.uk/docs/Add-a-New-System-in-EmulationStation/>
+
+* Note: had trouble creating the link (ln <https://wiki.debian.org/SymLink>) files. My issue was I was accidently using relative paths, instead of global. Also, I did not link ALL files, only the ones set up in the menu. This cased PlayStation roms (which almost always had multiple roms associate by a cue file) to not work.  
+
+## Karaoke?
+
+* <https://retropie.org.uk/docs/KODI/>
+
+* <http://kodi.wiki/view/Add-on:YouTube>
+
+* <http://bobbyromeo.com/technology/raspberry-pi/installing-kodi-retropie-mega-super-guide/>
+
+## Issues with Sega Genesis only using three buttons
+
+* <https://github.com/retropie/retropie-setup/wiki/Genesis-Megadrive>
+
+## Store ROMs in a thumb drive (?) 
+
+* <http://bobbyromeo.com/technology/raspberry-pi/installing-kodi-retropie-mega-super-guide/>
+
+* Mount and automatically connect a thumb drive
+  <https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=38058>
+  
+  If you  
+  ```
+  sudo nano /etc/fstab
+  ```  
+  then add the line to the end
+  ```
+  /dev/sda2 /mnt/usb vfat defaults 0 2
+  ```
+  it should mount at boot, assuming the sda2 does not change, which it can if other drives exist at boot up.
+  A better option is to use uuid instead of /dev/
+  the uuid can be found using the following
+  ```
+  ls -l /dev/disk/by-uuid/
+  ```
+  or gparted has the same info
+  then your fstab line would start
+  ```
+  UUID=long_hex_number_from_previous_command /mnt/usb vfat defaults 0 2
+  ```
+  Using that method means it doesn't matter whether your drive comes up as sda1 or sdb2 or whatever if another drive is in when the Pi is booted.
+  I've always used uuid on all of my computers.
+  Stu
+
+## Multiboot pi 
+* <http://www.multibootpi.com/>
+* <https://www.reddit.com/r/RetroPie/comments/5f0xqj/kodi_from_retropie_slow_install_slow_in_general/>
+
+## Rotate & Position Monitor
+
+For touchscreen: <https://www.raspberrypi.org/forums/viewtopic.php?f=108&t=120793>
+
+`sudo nano /boot/config.txt`
+
+```
+display_rotate=0 Normal
+display_rotate=1 90 degrees
+display_rotate=2 180 degrees
+NOTE: You can rotate both the image and touch interface 180º by entering lcd_rotate=2 instead
+display_rotate=3 270 degrees
+display_rotate=0x10000 horizontal flip
+display_rotate=0x20000 vertical flip
+```
+ 
 ## Upcoming steps
+
+Turn off backlight on touchscreen: <https://github.com/Hexxeh/rpi-firmware/issues/96>
+ 
 
 The arcade has been up and functioning for a while, but there are some things I have yet to finish. 
 
@@ -47,6 +118,12 @@ Also, right now you need to turn the power for the arcade off completely... ther
 Another issue I should work through, the amp causes the speakers to jump every time it is powered on or off. I plan on getting that resolved... possibly with some simple relays on the speaker wires.
 
 Finally, the cabinet part of the arcade isn't finished! Too many things keep getting in the way... I had a deadline (my brother was coming to visit from France) so I made it functional before I had a chance to finish making it smooth or adding any of the plexiglass for the display section! I need to take it back apart, clean it up, add the plexi and get some decals ordered!  
+
+## Problems
+
+* "Restart System" or "Restart EmulationStation" only exits emulationstation
+
+
 
 [Raspberry Pi]:     https://www.raspberrypi.org/
 [RetroPie]:         https://retropie.org.uk/

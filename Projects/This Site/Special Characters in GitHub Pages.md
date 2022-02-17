@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: article
 title: Special Characters in GitHub Pages
 categories: [article, github, github_pages]
 project: this_site
